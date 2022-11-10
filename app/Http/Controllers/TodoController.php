@@ -12,4 +12,9 @@ class TodoController extends Controller
         return response(Todo::all(), 200)
         ->header('Content-Type', 'application/json');
     }
+
+    public function show($id){
+        return response(Todo::findOrFail($id), 200)
+        ->header('Content-Type', 'application/json');
+    }
 }
